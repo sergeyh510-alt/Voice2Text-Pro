@@ -34,7 +34,7 @@
 ---
 
 <a name="english"></a>
-## 🇬🇧 English
+## English
 
 ### 📱 About
 
@@ -60,13 +60,6 @@
 
 ### 📸 Screenshots
 
-| Main Screen | Help Dialog |
-|:---:|:---:|
-| ![Main Screen](screenshots/main.png) | ![Help](screenshots/help.png) |
-
-*(Screenshots will be added soon)*
-
----
 
 ### 🛠️ Technologies
 
