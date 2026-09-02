@@ -1,0 +1,189 @@
+# ================================================================
+# .gitignore для Voice2Text Pro
+# ================================================================
+# 👨‍💻 Разработчик: Сергей Чекрыжов
+# 📧 Email: sergeyh510@gmail.com
+# 🐙 GitHub: https://github.com/sergeyh510-alt
+# ================================================================
+
+# ================================================================
+# 1. ФАЙЛЫ IDE (IntelliJ IDEA / Android Studio)
+# ================================================================
+
+# IDEA project files
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# Конкретные файлы .idea (как у вас в списке)
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/compiler.xml
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/vcs.xml
+.idea/dictionaries/
+.idea/runConfigurations/
+
+# ================================================================
+# 2. ФАЙЛЫ СБОРКИ GRADLE
+# ================================================================
+
+# Gradle build output
+build/
+app/build/
+.gradle/
+
+# Gradle wrapper (сохраняем только .properties)
+gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Gradle cache
+gradle-app.setting
+
+# ================================================================
+# 3. ЛОКАЛЬНЫЕ НАСТРОЙКИ
+# ================================================================
+
+# SDK Location (ваш файл)
+local.properties
+
+# Keystore files
+*.jks
+*.keystore
+*.key
+*.p12
+*.pfx
+*.pem
+*.crt
+*.csr
+
+# Google Services
+google-services.json
+GoogleService-Info.plist
+
+# ================================================================
+# 4. NATIVE BUILD ФАЙЛЫ
+# ================================================================
+
+# CMake / NDK
+.externalNativeBuild/
+.cxx/
+*.so
+*.o
+*.a
+
+# ================================================================
+# 5. КЭШ И ВРЕМЕННЫЕ ФАЙЛЫ
+# ================================================================
+
+# Cache
+.cache/
+cache/
+*.cache
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+logs/
+
+# Crash reports
+*.crash
+*.hprof
+*.dump
+
+# Lint reports
+lint-results.html
+lint-results.xml
+
+# ================================================================
+# 6. ФАЙЛЫ ОПЕРАЦИОННЫХ СИСТЕМ
+# ================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+*.swp
+*.swo
+*.swn
+*.pid
+*.core
+
+# ================================================================
+# 7. ФАЙЛЫ ОТЛАДКИ
+# ================================================================
+
+# Captures (скриншоты/видео тестов)
+captures/
+/captures/
+
+# ================================================================
+# 8. ПРОЧИЕ ФАЙЛЫ
+# ================================================================
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Compiled files
+*.class
+*.dex
+*.apk
+*.aar
+
+# ================================================================
+# 9. ФАЙЛЫ КОТОРЫЕ НЕ НУЖНО ИГНОРИРОВАТЬ (сохраняем)
+# ================================================================
+
+# !.gitignore
+# !README.md
+# !LICENSE
+# !build.gradle.kts
+# !settings.gradle.kts
+# !gradle.properties
+# !app/build.gradle.kts
+# !app/src/main/AndroidManifest.xml
+# !app/src/main/res/
+# !app/src/main/java/
+
+# ================================================================
+# КОНЕЦ ФАЙЛА
+# ================================================================

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    =============================================================
+    VOICE2TEXT PRO - Главный экран приложения
+    =============================================================
+    Разработчик: Сергей Чекрыжов
+    Email: sergeyh510@gmail.com
+    GitHub: https://github.com/sergeyh510-alt
+    Программа создана с любовью для удобства пользователей
+    =============================================================
+    
+    ОПИСАНИЕ ИНТЕРФЕЙСА:
+    Ряд 1: Speak | Continuous - кнопки распознавания
+    Ряд 2: SEND - большая кнопка отправки
+    Ряд 3: Clear | Help - управление текстом и справка
+    Ряд 4: Delay (sec) | Auto Send - настройки паузы
+    Ряд 5: Clear before Send - настройка очистки
+    Ряд 6: Server - настройка сервера
+    Ряд 7: Save Settings | Full Help - сохранение и справка
+    Ряд 8: Статусная строка
+    Ряд 9: Область вывода текста (ScrollView)
+    =============================================================
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <!-- ===========================================================
+         РЯД 1: КНОПКИ РАСПОЗНАВАНИЯ РЕЧИ
+         =========================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- 
+            КНОПКА: Speak (Одиночное распознавание)
+            Запускает однократное распознавание речи.
+            После нажатия нужно произнести фразу.
+            Цвет: Синий, Высота: 120dp
+        -->
+        <Button
+            android:id="@+id/btnListen"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="🎤 Speak"
+            android:textSize="18sp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:gravity="center" />
+
+        <!-- 
+            КНОПКА: Continuous (Непрерывный режим)
+            Включает/выключает непрерывное распознавание.
+            При активном режиме слушает постоянно.
+            Цвет: Зеленый (активен) / Красный (остановка)
+        -->
+        <Button
+            android:id="@+id/btnContinuous"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:gravity="center"
+            android:text="🔄 Continuous"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- ===========================================================
+         РЯД 2: БОЛЬШАЯ КНОПКА ОТПРАВКИ SEND
+         =========================================================== -->
+    <!-- 
+        КНОПКА: SEND (Отправка на сервер)
+        Отправляет распознанный текст на сервер через TCP-сокеты.
+        Особенности:
+        - Занимает всю ширину экрана
+        - Увеличенная высота (80dp)
+        - Жирный шрифт и увеличенный размер (22sp)
+        - Оранжевый фон
+    -->
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:text="📤 SEND"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:gravity="center"
+        android:letterSpacing="0.1" />
+
+    <!-- ===========================================================
+         РЯД 3: КНОПКИ УПРАВЛЕНИЯ ТЕКСТОМ И СПРАВКА
+         =========================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- 
+            КНОПКА: Clear (Очистка текста)
+            Полностью очищает поле вывода текста.
+            Сбрасывает накопленный и отправленный текст.
+            Цвет: Красный
+        -->
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="🗑️ Clear"
+            android:textSize="16sp"
+            android:backgroundTint="@android:color/holo_red_dark" />
+
+        <!-- 
+            КНОПКА: Help (Краткая справка)
+            Отображает диалог с краткой справкой.
+            Содержит описание всех кнопок на RU и EN.
+            Цвет: Фиолетовый
+        -->
+        <Button
+            android:id="@+id/btnHelp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="❓ Help"
+            android:textSize="16sp"
+            android:backgroundTint="@android:color/holo_purple" />
+    </LinearLayout>
+
+    <!-- ===========================================================
+         РЯД 4: НАСТРОЙКИ ПАУЗЫ И АВТООТПРАВКИ
+         =========================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Подпись для поля задержки -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏱️ Delay (sec): "
+            android:textSize="14sp" />
+
+        <!-- 
+            ПОЛЕ ВВОДА: Delay (Задержка паузы)
+            Устанавливает время (в секундах) между окончанием речи
+            и автоматической отправкой. По умолчанию: 2 секунды.
+            Тип ввода: только числа.
+            Валидация: значение должно быть больше 0.
+        -->
+        <EditText
+            android:id="@+id/etDelay"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="2"
+            android:textSize="14sp"
+            android:background="@android:drawable/editbox_background"
+            android:padding="4sp" />
+
+        <!-- Подпись для переключателя автоотправки -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="🤖 Auto Send"
+            android:textSize="14sp" />
+
+        <!-- 
+            ПЕРЕКЛЮЧАТЕЛЬ: Auto Send (Автоотправка)
+            ON: текст отправляется автоматически после паузы.
+            OFF: текст отправляется только вручную (кнопка SEND).
+            По умолчанию: ON (true).
+        -->
+        <Switch
+            android:id="@+id/switchAutoSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:checked="true" />
+    </LinearLayout>
+
+    <!-- ===========================================================
+         РЯД 5: НАСТРОЙКА ОЧИСТКИ ПЕРЕД ОТПРАВКОЙ
+         =========================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Подпись для переключателя очистки -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🧹 Clear before Send"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+
+        <!-- 
+            ПЕРЕКЛЮЧАТЕЛЬ: Clear before Send (Очистка перед отправкой)
+            ON: новый текст ЗАМЕНЯЕТ предыдущий (только последний текст).
+            OFF: новый текст ДОБАВЛЯЕТСЯ к предыдущему (с новой строки).
+            По умолчанию: ON (true).
+        -->
+        <Switch
+            android:id="@+id/switchClearBeforeSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:checked="true" />
+
+        <!-- Пояснение к режиму работы -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="(only last text)"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!-- ===========================================================
+         РЯД 6: НАСТРОЙКА СЕРВЕРА
+         =========================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Подпись для поля URL сервера -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌐 Server: "
+            android:textSize="14sp" />
+
+        <!-- 
+            ПОЛЕ ВВОДА: Server URL (URL сервера)
+            Указывает адрес сервера для отправки данных.
+            Формат: http://IP_адрес:ПОРТ
+            Пример: http://192.168.1.100:5000
+            Тип ввода: textUri (URL)
+        -->
+        <EditText
+            android:id="@+id/etServerUrl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="textUri"
+            android:text="http://192.168.1.100:5000"
+            android:textSize="12sp"
+            android:background="@android:drawable/editbox_background"
+            android:padding="4sp" />
+    </LinearLayout>
+
+    <!-- ===========================================================
+         РЯД 7: КНОПКИ НАСТРОЕК И ПОЛНОЙ СПРАВКИ
+         =========================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- 
+            КНОПКА: Save Settings (Сохранить настройки)
+            Сохраняет текущие настройки в SharedPreferences:
+            - URL сервера
+            - Задержку паузы
+            - Состояние Auto Send
+            - Состояние Clear before Send
+            Цвет: Фиолетовый
+        -->
+        <Button
+            android:id="@+id/btnSaveSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="💾 Save Settings"
+            android:textSize="14sp"
+            android:backgroundTint="@android:color/holo_purple" />
+
+        <!-- 
+            КНОПКА: Full Help (Полная справка)
+            Отображает диалог с полной справкой.
+            Содержит назначение, режимы работы, настройки,
+            протокол отправки и информацию о разработчике.
+            Цвет: Оранжевый
+        -->
+        <Button
+            android:id="@+id/btnHelpFull"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:text="📖 Full Help"
+            android:textSize="14sp"
+            android:backgroundTint="@android:color/holo_orange_dark" />
+    </LinearLayout>
+
+    <!-- ===========================================================
+         РЯД 8: СТРОКА СТАТУСА
+         =========================================================== -->
+    <!-- 
+        ТЕКСТОВОЕ ПОЛЕ: Status (Статус)
+        Отображает текущее состояние приложения:
+        - "Press Speak to start recognition" - ожидание
+        - "Speak now..." - идет распознавание
+        - "Recognized: текст" - успешное распознавание
+        - "Error: ..." - ошибка
+        - "Sending..." - отправка на сервер
+        - "Sent!" - успешная отправка
+    -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Press Speak to start recognition"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray" />
+
+    <!-- ===========================================================
+         РЯД 9: ОБЛАСТЬ ВЫВОДА РАСПОЗНАННОГО ТЕКСТА
+         =========================================================== -->
+    <!-- 
+        КОНТЕЙНЕР: ScrollView (Прокручиваемая область)
+        Обеспечивает прокрутку длинного текста.
+        Занимает все оставшееся пространство (layout_weight="1").
+        Светло-серый фон (#F5F5F5).
+    -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:background="#F5F5F5"
+        android:padding="8dp">
+
+        <!-- 
+            ТЕКСТОВОЕ ПОЛЕ: Result (Результат распознавания)
+            Отображает распознанный текст.
+            Крупный шрифт (18sp) для читаемости.
+            Черный текст на светлом фоне.
+            Текст-заглушка: "Recognized text will appear here..."
+        -->
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recognized text will appear here..."
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:padding="8dp" />
+    </ScrollView>
+
+</LinearLayout>

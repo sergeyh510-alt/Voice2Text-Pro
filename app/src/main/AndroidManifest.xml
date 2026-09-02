@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ================================================================
+    🎙️ Voice2Text Pro - Манифест приложения
+    ================================================================
+    👨‍💻 Разработчик: Сергей Чекрыжов
+    📧 Email: sergeyh510@gmail.com
+    🐙 GitHub: https://github.com/sergeyh510-alt
+    💡 Программа создана с ❤️ для удобства пользователей
+    ================================================================
+
+    РАЗРЕШЕНИЯ:
+
+    - RECORD_AUDIO - для записи голоса через микрофон
+    - INTERNET - для отправки данных на сервер
+
+    НАСТРОЙКИ:
+
+    - usesCleartextTraffic="true" - разрешает HTTP (не HTTPS)
+    - label="Voice2Text Pro" - название приложения
+    - export="true" - активность доступна извне
+    - MAIN + LAUNCHER - приложение появляется в меню
+    ================================================================
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.my_speek">
+
+    <!-- Разрешение на запись аудио (для распознавания речи) -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Разрешение на доступ к интернету (для отправки на сервер) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Voice2Text Pro"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        android:usesCleartextTraffic="true">
+
+        <!--
+            Главная активность приложения
+            export="true" - позволяет запускать из других приложений
+            intent-filter: MAIN + LAUNCHER - отображается в меню приложений
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
