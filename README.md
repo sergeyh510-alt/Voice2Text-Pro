@@ -1,5 +1,4 @@
 
-
 <!-- ============================================================
      Voice2Text Pro - README.md
      ============================================================
@@ -26,12 +25,15 @@
 
 ## 📖 Table of Contents / Содержание
 
-- [🇬🇧 English](#english)
-- [🇷🇺 Русский](#russian)
+- [English](#english)
+- [Русский](#russian)
 - [📡 Protocol / Протокол](#protocol--протокол)
 - [📞 Contacts / Контакты](#contacts--контакты)
 
 ---
+
+
+
 
 <a name="english"></a>
 ## English
@@ -48,6 +50,7 @@
 
 ### ✨ Features
 
+
 - 🎤 **Speech Recognition** — uses Google Speech Recognizer
 - 🔄 **Continuous Mode** — for long dictations
 - 📤 **Server Sending** — via TCP sockets with JSON format
@@ -60,6 +63,7 @@
 
 ### 📸 Screenshots
 
+<img width="312" height="503" alt="screen2" src="https://github.com/user-attachments/assets/bb2eef5b-23ac-4828-86a3-97030f0b41a8" />
 
 ### 🛠️ Technologies
 
@@ -160,7 +164,7 @@ text
 * MIT License — see LICENSE file
 
 <a name="russian"></a>
-* 🇷🇺 Русский
+*  Русский
 * 📱 О приложении
 
 ### Voice2Text Pro — это Android-приложение для распознавания речи с возможностью отправки текста на сервер через TCP-сокеты.
@@ -185,11 +189,6 @@ text
 
 *    📖 Встроенная справка — на русском и английском языках
 
-### 📸 Скриншоты
-Главный экран	Диалог справки
-"https://screenshots/main.png	https://screenshots/help.png"
-
-(Скриншоты будут добавлены позже)
 
 
 ### 🛠️ Технологии
@@ -215,7 +214,7 @@ json
 }
 
 ###  🚀 Установка
-###Требования:
+### Требования:
 
 *    Android Studio 2022.3.1+
 
@@ -268,18 +267,6 @@ app/
 * ├── build.gradle.kts
 * └── ...
 
-### 🤝 Вклад в проект
-
-    Форкните репозиторий
-
-*    Создайте ветку для новой функции (git checkout -b feature/amazing)
-
-*    Зафиксируйте изменения (git commit -m 'Add amazing feature')
-
-*    Отправьте в ветку (git push origin feature/amazing)
-
-*    Откройте Pull Request
-
 ### 📝 Лицензия
 
 MIT License — см. файл LICENSE
@@ -321,9 +308,9 @@ json
 
 ### контакты
 * 📞 Contacts / Контакты
-Contact	Link
-Email	sergeyh510@gmail.com
-GitHub	sergeyh510-alt
-Project	Voice2Text-Pro
+* Contact	Link
+* Email	sergeyh510@gmail.com
+* GitHub	sergeyh510-alt
+* Project	Voice2Text-Pro
 
 
