@@ -365,9 +365,11 @@ json
 
 ### контакты
 * 📞 Contacts / Контакты
-* Contact	Link
+* Contact	Sergey Chekryzhov
 * Email	sergeyh510@gmail.com
 * GitHub	sergeyh510-alt
 * Project	Voice2Text-Pro
+* LinkedIn: www.linkedin.com/in/sergey-chekryzhov-a38778217
+* Telegram: @SergeyChekryzhov
 
 
