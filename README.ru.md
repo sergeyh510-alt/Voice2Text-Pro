@@ -73,6 +73,9 @@ Voice2Text Pro — это мобильное приложение для Android
 
 ## 📸 
 ## Интерфейс
+<img width="312" height="503" alt="screen2" src="https://github.com/user-attachments/assets/44c76d3a-4a4f-42c0-9c53-f7e9b78b9238" />
+
+
 ```bash
 ┌──────────────────────────────────────────────────────┐
 │  ┌─────────────┐  ┌─────────────────────────────┐  │
