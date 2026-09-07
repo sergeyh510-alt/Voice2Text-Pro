@@ -90,6 +90,10 @@ enabling voice-controlled interaction with local applications and services.
 ## 📸 
 ## Interface
 #### Main Application Screen
+
+<img width="312" height="503" alt="screen2" src="https://github.com/user-attachments/assets/97e73b33-8e5f-4bf7-8813-3abe01338f79" />
+
+
 ```bash
 ┌──────────────────────────────────────────────────────┐
 │  ┌─────────────┐  ┌─────────────────────────────┐  │
