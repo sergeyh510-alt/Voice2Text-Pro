@@ -24,31 +24,29 @@ Android | Kotlin | Google Speech Recognizer | TCP Sockets
 
 ## 📖 Table of Contents
 
-  *  📱 About the Project
+  *  [📱 About the Project](#About-the-Project])
 
-  *  ✨ Features
+  *  [✨ Features](#Features)
 
-  *  📸 Interface
+  *  [📸 Interface](#Interface)
 
-  *  🏗️ Architecture
+  *  [🏗️ Architecture](#Architecture)
 
-  *  📡 Communication Protocol
+  *  [📡 Communication Protocol](#Communication-Protocol)
 
-  *  🚀 Installation
+  *  [🚀 Installation](#Installatio)
 
-  *  📖 User Guide
+  *  [📖 User Guide](#User-Guide)
 
-  *  🧪 Testing
+  *  [🧪 Testing](#Testing)
 
-  *  📁 Project Structure
+  *  [📁 Project Structure](#roject-Structure)
 
-  * 🛠️ Technologies
+  * [🛠️ Technologies](#Technologie)
 
-  *  🤝 Contributing
+  *  [📝 License](#License)
 
-  *  📝 License
-
-  *  📞 Contacts
+  *  [📞 Contacts](#Contacts)
 
 
 
