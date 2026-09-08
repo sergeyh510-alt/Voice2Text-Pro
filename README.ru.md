@@ -374,10 +374,10 @@ Handler + Runnable|	Управление таймером паузы
 Этот проект распространяется под лицензией MIT — подробности в файле LICENSE.
 ### 📞 
 ### Контакты
-* Contact Sergey Chekryzhov
-* Email sergeyh510@gmail.com
+* Contact: Sergey Chekryzhov
+* Email: sergeyh510@gmail.com
 * GitHub sergeyh510-alt
-* Project Weather-ETL-Pipeline
+* Project: Voice2Text-Pro
 * LinkedIn: www.linkedin.com/in/sergey-chekryzhov-a38778217
 * Telegram: @SergeyChekryzhov
 
